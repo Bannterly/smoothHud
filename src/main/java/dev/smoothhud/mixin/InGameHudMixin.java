@@ -33,19 +33,6 @@ public abstract class InGameHudMixin {
 	@Unique
 	private static Player lastPlayer = null;
 
-	@Unique
-    private @Nullable Player getCameraPlayer() {
-		Entity cameraEntity = this.minecraft.getCameraEntity();
-		Player p;
-		if (cameraEntity instanceof Player player) {
-			p = player;
-		} else {
-			p = null;
-		}
-
-		return p;
-	}
-
 	@Inject(
 			method = "extractItemHotbar",
 			at = @At("HEAD")
